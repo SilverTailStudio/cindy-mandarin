@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant Setup Guide for Teachers</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Nunito', sans-serif; background: #FFF8F0; color: #3D3D3D; line-height: 1.8; }
+
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 50px 20px 40px;
+  text-align: center;
+  color: #fff;
+}
+.header h1 { font-size: 2em; font-weight: 800; margin-bottom: 8px; }
+.header p { font-size: 1.1em; opacity: 0.9; }
+
+.container { max-width: 700px; margin: 0 auto; padding: 30px 24px; }
+
+h2 { font-size: 1.5em; font-weight: 800; color: #764ba2; margin: 30px 0 16px; }
+h3 { font-size: 1.15em; font-weight: 700; color: #667eea; margin: 20px 0 10px; }
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  border-left: 4px solid #764ba2;
+}
+.card.green { border-left-color: #27ae60; }
+.card.blue { border-left-color: #3498db; }
+.card.orange { border-left-color: #f39c12; }
+
+.price {
+  display: inline-block;
+  background: #764ba2;
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.95em;
+}
+.price.free { background: #27ae60; }
+
+.step-num {
+  display: inline-flex;
+  width: 32px; height: 32px;
+  background: #764ba2;
+  color: #fff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.example {
+  background: #f8f4ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 12px 0;
+  font-size: 0.95em;
+  border: 1px solid #e8dff5;
+}
+.example .cmd { color: #764ba2; font-weight: 700; }
+.example .result { color: #888; font-style: italic; margin-top: 6px; }
+
+.total-box {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 16px;
+  padding: 28px;
+  color: #fff;
+  text-align: center;
+  margin: 24px 0;
+}
+.total-box .amount { font-size: 2.5em; font-weight: 800; }
+.total-box .note { opacity: 0.85; margin-top: 8px; }
+
+.list { padding-left: 0; list-style: none; }
+.list li { padding: 6px 0; padding-left: 28px; position: relative; }
+.list li::before { content: '✅'; position: absolute; left: 0; }
+
+.warn { background: #fff3e0; border-radius: 12px; padding: 16px; border-left: 4px solid #f39c12; margin: 16px 0; font-size: 0.9em; }
+
+.footer { text-align: center; padding: 30px; color: #aaa; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🤖 AI Assistant Setup Guide</h1>
+  <p>Everything you need to get your own AI assistant for teaching</p>
+</div>
+
+<div class="container">
+
+  <h2>💰 What You Need (Subscriptions)</h2>
+
+  <div class="card green">
+    <h3>1. GitHub Account <span class="price free">FREE</span></h3>
+    <p>Hosts your website for free. Your landing page, slides, and teaching materials will be published here.</p>
+    <p><strong>Sign up:</strong> <a href="https://github.com/signup">github.com/signup</a></p>
+  </div>
+
+  <div class="card">
+    <h3>2. Claude Pro <span class="price">US$20/month</span></h3>
+    <p>Your AI assistant. It can create websites, write content, generate lesson plans, make presentations, build interactive teaching tools — all from simple instructions in English or Chinese.</p>
+    <p><strong>Subscribe:</strong> <a href="https://claude.ai/upgrade">claude.ai/upgrade</a></p>
+  </div>
+
+  <div class="card blue">
+    <h3>3. Grok API (Optional) <span class="price">~US$5 top-up</span></h3>
+    <p>For generating cute illustrations (like the classroom image). Pay-as-you-go, about $0.07 per image.</p>
+    <p><strong>Sign up:</strong> <a href="https://console.x.ai">console.x.ai</a></p>
+  </div>
+
+  <div class="total-box">
+    <div class="amount">US$20/month</div>
+    <div class="note">That's it. One subscription + one free account = unlimited AI assistant.</div>
+  </div>
+
+  <h2>🛠️ Setup Steps (15 minutes)</h2>
+
+  <div class="card">
+    <p><span class="step-num">1</span> <strong>Create GitHub account</strong></p>
+    <p>Go to <a href="https://github.com/signup">github.com/signup</a>, sign up with your email.</p>
+  </div>
+
+  <div class="card">
+    <p><span class="step-num">2</span> <strong>Subscribe to Claude Pro</strong></p>
+    <p>Go to <a href="https://claude.ai">claude.ai</a>, create account, upgrade to Pro ($20/month).</p>
+  </div>
+
+  <div class="card">
+    <p><span class="step-num">3</span> <strong>Install Claude Code</strong> (on your computer)</p>
+    <p>Open Terminal (Mac) or Command Prompt (Windows) and type:</p>
+    <div class="example">
+      <div class="cmd">npm install -g @anthropic-ai/claude-code</div>
+    </div>
+    <p>Then start it by typing:</p>
+    <div class="example">
+      <div class="cmd">claude</div>
+    </div>
+    <p>Log in with your Claude account. Done!</p>
+  </div>
+
+  <div class="warn">
+    ⚠️ <strong>Note:</strong> You need Node.js installed first. Download from <a href="https://nodejs.org">nodejs.org</a> (choose LTS version). This is a one-time setup.
+  </div>
+
+  <h2>💬 How to Use (Just Talk to It!)</h2>
+
+  <p>Once Claude Code is running, just type what you want in plain English:</p>
+
+  <div class="example">
+    <div class="cmd">"Make me a landing page for my Mandarin tutoring class"</div>
+    <div class="result">→ Creates a complete website with your info</div>
+  </div>
+
+  <div class="example">
+    <div class="cmd">"Write a Facebook post to recruit new students"</div>
+    <div class="result">→ Writes engaging copy with hashtags</div>
+  </div>
+
+  <div class="example">
+    <div class="cmd">"Create a 5-page presentation about my class"</div>
+    <div class="result">→ Makes interactive slides you can present</div>
+  </div>
+
+  <div class="example">
+    <div class="cmd">"Build an interactive picture book to teach numbers in Chinese"</div>
+    <div class="result">→ Creates a web app where kids tap to hear pronunciation</div>
+  </div>
+
+  <div class="example">
+    <div class="cmd">"Make worksheets for learning basic Chinese characters"</div>
+    <div class="result">→ Generates printable PDF worksheets</div>
+  </div>
+
+  <div class="example">
+    <div class="cmd">"Deploy my website to GitHub Pages"</div>
+    <div class="result">→ Publishes your site with a shareable link</div>
+  </div>
+
+  <h2>✨ What AI Can Do For Your Teaching</h2>
+
+  <ul class="list">
+    <li>Create professional websites and landing pages</li>
+    <li>Write social media posts (Facebook, Instagram)</li>
+    <li>Generate cute illustrations for materials</li>
+    <li>Build interactive teaching tools (audio books, flashcards, quizzes)</li>
+    <li>Make presentation slides</li>
+    <li>Create and format lesson plans</li>
+    <li>Generate worksheets and printable materials</li>
+    <li>Translate content between languages</li>
+    <li>Manage your class schedule and communications</li>
+    <li>Basically anything you can describe in words!</li>
+  </ul>
+
+  <h2>📱 Mobile Access</h2>
+
+  <div class="card blue">
+    <p>You can also use <strong>Claude</strong> on your phone:</p>
+    <ul class="list">
+      <li>Download Claude app (iOS / Android)</li>
+      <li>Or use <a href="https://claude.ai">claude.ai</a> in your browser</li>
+      <li>Chat with AI anytime, anywhere</li>
+    </ul>
+    <p style="margin-top:10px">For advanced features (building websites, deploying), use Claude Code on your computer.</p>
+  </div>
+
+  <h2>🆚 What This Replaces</h2>
+
+  <div class="card orange">
+    <table style="width:100%; font-size:0.9em;">
+      <tr><td style="padding:6px 0"><strong>Web designer</strong></td><td style="text-align:right">$500-1500</td></tr>
+      <tr><td style="padding:6px 0"><strong>Graphic designer</strong></td><td style="text-align:right">$200-500</td></tr>
+      <tr><td style="padding:6px 0"><strong>Social media manager</strong></td><td style="text-align:right">$300-800/month</td></tr>
+      <tr><td style="padding:6px 0"><strong>Interactive content developer</strong></td><td style="text-align:right">$1000+</td></tr>
+      <tr style="border-top: 2px solid #f39c12"><td style="padding:10px 0"><strong>AI Assistant (all of the above)</strong></td><td style="text-align:right"><strong>$20/month</strong></td></tr>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Made with 💕 | Questions? Ask the person who showed you this page!</p>
+</div>
+
+</body>
+</html>
