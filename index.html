@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Cindy's Mandarin Class</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #FFF8F0;
+  color: #3D3D3D;
+  line-height: 1.7;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 50%, #FDD6BD 100%);
+  padding: 60px 20px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #FFF8F0;
+  border-radius: 50% 50% 0 0;
+}
+.hero-emoji { font-size: 64px; margin-bottom: 10px; }
+.hero h1 {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+  margin-bottom: 8px;
+}
+.hero h1 span { color: #FF6B6B; }
+.hero p {
+  font-size: 1.15em;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Section */
+.section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.section h2 {
+  font-size: 1.6em;
+  font-weight: 800;
+  color: #FF6B6B;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.section h2 .icon { font-size: 1.2em; margin-right: 8px; }
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
+  border: 2px solid #FFE0E0;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card h3 {
+  font-size: 1.3em;
+  color: #FF6B6B;
+  margin-bottom: 10px;
+}
+.card p { color: #666; font-size: 0.95em; }
+.card .tag {
+  display: inline-block;
+  background: #FFF0F0;
+  color: #FF6B6B;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin: 4px 4px 4px 0;
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 500px) {
+  .features { grid-template-columns: 1fr; }
+}
+.feature {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  border: 2px solid #FFE8D6;
+}
+.feature .emoji { font-size: 40px; margin-bottom: 10px; }
+.feature h4 { color: #FF8C69; font-size: 1.05em; margin-bottom: 6px; }
+.feature p { color: #888; font-size: 0.88em; }
+
+/* Testimonial */
+.testimonial {
+  background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 20px;
+  border-left: 5px solid #81C784;
+}
+.testimonial p { font-style: italic; color: #555; }
+.testimonial .author { font-weight: 700; color: #4CAF50; margin-top: 10px; font-style: normal; }
+
+/* Pricing */
+.pricing {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.1);
+  border: 2px solid #FFE0E0;
+  margin-bottom: 20px;
+}
+.pricing .price {
+  font-size: 2em;
+  font-weight: 800;
+  color: #FF6B6B;
+  margin: 10px 0;
+}
+.pricing .note { color: #999; font-size: 0.85em; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #FF9A9E, #FF6B6B);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 30px 30px 0 0;
+}
+.cta h2 { color: #fff; font-size: 1.6em; margin-bottom: 15px; }
+.cta p { color: rgba(255,255,255,0.9); margin-bottom: 25px; font-size: 1.05em; }
+.cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #FF6B6B;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.cta-btn:hover { transform: scale(1.05); }
+
+/* About */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 2px solid #FFE0E0;
+}
+.about-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9A9E, #FECFEF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  flex-shrink: 0;
+}
+@media (max-width: 500px) {
+  .about { flex-direction: column; text-align: center; }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-size: 0.8em;
+}
+
+/* Koala decoration */
+.koala-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 50px;
+  animation: bounce 2s ease-in-out infinite;
+  z-index: 100;
+  cursor: pointer;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
+</head>
+<body>
+
+<div class="koala-float" title="Hi!">🐨</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-emoji">🐨🇹🇼</div>
+  <h1>Teacher <span>Cindy</span>'s<br>Mandarin Class</h1>
+  <p>Fun, engaging Mandarin lessons for kids in Australia. Let your children discover the beauty of Chinese!</p>
+</div>
+
+<!-- About -->
+<div class="section">
+  <h2><span class="icon">👩‍🏫</span> Meet Teacher Cindy</h2>
+  <div class="about">
+    <div class="about-avatar">👩‍🏫</div>
+    <div>
+      <p><strong>Native Mandarin speaker</strong> with years of experience teaching children of all levels. Currently teaching at <strong>three schools</strong> plus private tutoring sessions.</p>
+      <p style="margin-top:8px">Cindy creates a warm, fun learning environment where kids naturally fall in love with Mandarin! 💕</p>
+    </div>
+  </div>
+</div>
+
+<!-- Classes -->
+<div class="section">
+  <h2><span class="icon">📚</span> Class Options</h2>
+
+  <div class="card">
+    <h3>🐨 Koala Class — Group Lessons</h3>
+    <p>A fun Saturday morning class for beginners! Kids learn Mandarin through games, songs, and interactive activities. Perfect for children just starting their Mandarin journey.</p>
+    <div style="margin-top: 12px">
+      <span class="tag">📅 Every Saturday Morning</span>
+      <span class="tag">👶 Beginner Friendly</span>
+      <span class="tag">👥 Small Group (4-5 kids)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🎯 1-on-1 Private Tutoring</h3>
+    <p>Customized lessons tailored to your child's level and goals. Teacher Cindy travels to your home for maximum convenience. Textbooks and curriculum provided!</p>
+    <div style="margin-top: 12px">
+      <span class="tag">🏠 At Your Home</span>
+      <span class="tag">📝 Custom Curriculum</span>
+      <span class="tag">📅 Mon & Wed Afternoon</span>
+      <span class="tag">📖 Textbooks Included</span>
+    </div>
+  </div>
+</div>
+
+<!-- Why Choose -->
+<div class="section">
+  <h2><span class="icon">✨</span> Why Choose Teacher Cindy?</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="emoji">🎮</div>
+      <h4>Fun & Interactive</h4>
+      <p>Games, songs, and activities that make learning exciting</p>
+    </div>
+    <div class="feature">
+      <div class="emoji">📈</div>
+      <h4>Proven Results</h4>
+      <p>Students show significant improvement in speaking & reading</p>
+    </div>
+    <div class="feature">
+      <div class="emoji">🎒</div>
+      <h4>All Levels Welcome</h4>
+      <p>From absolute beginners to advanced learners</p>
+    </div>
+    <div class="feature">
+      <div class="emoji">🚗</div>
+      <h4>Home Visits</h4>
+      <p>Teacher Cindy comes to you — no commute hassle!</p>
+    </div>
+  </div>
+</div>
+
+<!-- Curriculum -->
+<div class="section">
+  <h2><span class="icon">📖</span> What Kids Will Learn</h2>
+  <div class="card">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div>
+        <h4 style="color:#FF8C69">🗣️ Speaking</h4>
+        <p>Daily conversations, pronunciation, tones</p>
+      </div>
+      <div>
+        <h4 style="color:#FF8C69">👂 Listening</h4>
+        <p>Stories, songs, comprehension exercises</p>
+      </div>
+      <div>
+        <h4 style="color:#FF8C69">✍️ Writing</h4>
+        <p>Character strokes, basic writing practice</p>
+      </div>
+      <div>
+        <h4 style="color:#FF8C69">📖 Reading</h4>
+        <p>Picture books, simple texts, pinyin</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="section">
+  <h2><span class="icon">💬</span> What Parents Say</h2>
+  <div class="testimonial">
+    <p>"My kids look forward to Mandarin class every week! Teacher Cindy makes it so fun that they don't even realize they're learning."</p>
+    <div class="author">— Koala Class Parent</div>
+  </div>
+  <div class="testimonial">
+    <p>"The improvement in my son's Mandarin speaking has been incredible. He started as a complete beginner and now he can have simple conversations!"</p>
+    <div class="author">— Private Tutoring Parent</div>
+  </div>
+</div>
+
+<!-- Trial -->
+<div class="section">
+  <div class="pricing">
+    <h3 style="color:#FF6B6B">🎉 Trial Classes Available!</h3>
+    <p style="margin-top:10px">Not sure if it's the right fit? Try a <strong>2-month trial period</strong> with no long-term commitment.</p>
+    <div class="price">FREE Trial Lesson</div>
+    <p class="note">First lesson free, then flexible monthly plans</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Ready to Start Your Child's Mandarin Journey? 🌟</h2>
+  <p>Contact Teacher Cindy to discuss your child's needs and schedule a trial class!</p>
+  <a href="mailto:cindy@example.com" class="cta-btn">📧 Contact Teacher Cindy</a>
+</div>
+
+<div class="footer">
+  <p>🐨 Teacher Cindy's Mandarin Class &copy; 2026 | Made with 💕 in Australia</p>
+</div>
+
+</body>
+</html>
